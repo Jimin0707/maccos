@@ -1,0 +1,50 @@
+{%extends'enroll/base.html'%}
+{%block content%}
+<div class="row">
+  <div class="col-sm-7 offset-1">  
+<h4 class="text-center alert alert-info">Add New product<h4>
+  {%if pro %}
+  <table class="table table-hover">
+    <thaed>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">name</th>
+        <th scope="col">description</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pr in pro%}
+      <tr>
+        <th scope ='row'>{{pr.id}}</th>
+        <td>{{pr.name}}</td>
+        <td>{{pr.description}}</td>
+        <td>
+          <a href
+      </tr>="{%url 'updatedata' pr.id%}" class="btn btn-warning btn-sm">Edit</a>
+      form action="{%url'deletedata'pr.id%}"
+      method="POST"class="d_inline">{%csrf_token %}
+      <input type="submit" class="btn btn-danger"value="Delete">
+    </form>
+  </td>
+</tr>
+
+
+      {%end for%}
+
+      <tr>
+        <th scope ='row'>2</th>
+        <td>Jacob</td>
+        <td> Thornton</td>
+        <td>@fat</td>
+      <tr>
+          <th scope ='row'>2</th>
+          <td>Jacob</td>
+          <td> Thornton</td>
+          <td>@fat</td>
+    </tbody>
+  </table>
+  {%else%}
+   <h4 class="text-center alert alert-warning">No Records</h4>
+   {%end if%}
+</div>
